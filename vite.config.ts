@@ -4,6 +4,8 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  // ADD THIS LINE: It tells Vite where the site lives on GitHub Pages
+  base: '/your-repo-name/', 
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -28,6 +30,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
+    // Note: GitHub Actions will look for files here
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
