@@ -5,7 +5,7 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
   // ADD THIS LINE: It tells Vite where the site lives on GitHub Pages
-  base: '/your-repo-name/', 
+  base: 'Auriga', 
   plugins: [
     react(),
     runtimeErrorOverlay(),
