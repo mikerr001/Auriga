@@ -4,8 +4,9 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  // ADD THIS LINE: It tells Vite where the site lives on GitHub Pages
-  base: 'Auriga', 
+  // 1. Updated base path with forward slashes
+  base: '/Auriga/', 
+  
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -30,8 +31,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    // Note: GitHub Actions will look for files here
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // 2. Simplified outDir so GitHub Actions can find it easily
+    outDir: path.resolve(import.meta.dirname, "dist"), 
     emptyOutDir: true,
   },
   server: {
